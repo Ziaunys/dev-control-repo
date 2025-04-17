@@ -77,7 +77,6 @@ mod 'puppetlabs-node_manager', '1.1.0'
 mod 'puppetlabs-reboot', '5.0.0'
 mod 'puppetlabs-vcsrepo', '6.1.0'
 mod 'puppetlabs-node_encrypt', '3.1.0'
-mod 'puppetlabs-nessus_transformer', '1.0.2'
 mod 'artsir-ansible_config', '1.1.3'   # likely unused. Should be reviewed at a future revision. 
 #mod 'puppetlabs-resource', '1.1.0'    # deprecated: likely unused. Uncomment if needed. Remove in future revision.
 #mod 'puppetlabs-service', '3.1.0'     # likely ununsed, there is a service task already packaged with PE. Uncomment if needed.
@@ -103,7 +102,7 @@ mod 'puppet-prometheus', '16.0.0'
 mod 'puppet-python', '7.4.0'
 mod 'provision',
   :git => 'https://github.com/puppetlabs/puppetlabs-provision',
-  :branch => 'v3.0.1'
+  :tag => 'v3.0.1'
 
 ## ServiceNOW Integrations 
 ## NOTE: These are disabled by default, uncomment and run code deploy if needed for a specific demo
