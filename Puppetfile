@@ -102,7 +102,7 @@ mod 'puppet-prometheus', '16.0.0'
 mod 'puppet-python', '7.4.0'
 mod 'provision',
   :git => 'https://github.com/puppetlabs/provision',
-  :tag => 'v3.0.1'
+  :branch => 'zounese_dev'
 
 ## ServiceNOW Integrations 
 ## NOTE: These are disabled by default, uncomment and run code deploy if needed for a specific demo

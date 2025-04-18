@@ -4,5 +4,4 @@ plan profile::create_test_node () {
       'platform' => 'ubuntu-2004-x86_64-pooled',
   })
   out::message($provision_response)
-  out::message(get_targets('all'))
 }
