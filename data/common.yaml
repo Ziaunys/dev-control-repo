@@ -207,3 +207,53 @@ cd4pe::root_config::ssl_authority_certificate: >
   PhKXJtEXd6y/8obPPI790UoXNBo3Phwr3ldvszh/2nD5LC2daSnN6Kk3qeZM
   RX36jCNx5SRFXin1ZFYA6SdRn6K9eneiidOSaTgwfCgG/3DaFVb6Oj409doP
   dR5cloXN579+9cEXYl5QRLYRlroKMgEg==]
+
+  puppet_enterprise::profile::console::java_args:
+  Xms: 1024m
+  Xmx: 1024m
+  'javaagent': ':/opt/puppetlabs/otel/opentelemetry-javaagent-all.jar'
+  'Dotel.metrics.exporter': '=none'
+  'Dotel.traces.exporter': '=otlp'
+  'Dotel.exporter.otlp.protocol': '=grpc'
+  'Dotel.exporter.otlp.endpoint': '=http://localhost:4317'
+  'Dotel.resource.attributes': "=service.name=pe-console-services,service.version=%{facts.pe_build},net.host.name=%{facts.networking.fqdn}"
+puppet_enterprise::profile::master::java_args:
+  Xms: 3072m
+  Xmx: 3072m
+  Xss: 4m
+  'XX:+HeapDumpOnOutOfMemoryError': ''
+  'XX:HeapDumpPath': '=/var/log/puppetlabs/puppetserver/puppetserver.hprof'
+  'Djruby.invokedynamic.yield': '=false'
+  'Djruby.management.enabled': '=true'
+  'javaagent': ':/opt/puppetlabs/otel/opentelemetry-javaagent-all.jar'
+  'Dotel.metrics.exporter': '=none'
+  'Dotel.exporter.otlp.protocol': '=grpc'
+  'Dotel.exporter.otlp.endpoint': '=http://localhost:4317'
+  'Dotel.resource.attributes': "=service.name=pe-puppetserver,service.version=%{facts.pe_build},net.host.name=%{facts.networking.fqdn}"
+puppet_enterprise::profile::orchestrator::java_args:
+  Xms: 3201m
+  Xmx: 3201m
+  'javaagent': ':/opt/puppetlabs/otel/opentelemetry-javaagent-all.jar'
+  'Dotel.metrics.exporter': '=none'
+  'Dotel.traces.exporter': '=otlp'
+  'Dotel.exporter.otlp.protocol': '=grpc'
+  'Dotel.exporter.otlp.endpoint': '=http://localhost:4317'
+  'Dotel.resource.attributes': "=service.name=pe-orchestration-services,service.version=%{facts.pe_build},net.host.name=%{facts.networking.fqdn}"
+puppet_enterprise::profile::puppetdb::java_args:
+  Xms: 4801m
+  Xmx: 4801m
+  'javaagent': ':/opt/puppetlabs/otel/opentelemetry-javaagent-all.jar'
+  'Dotel.metrics.exporter': '=none'
+  'Dotel.traces.exporter': '=otlp'
+  'Dotel.exporter.otlp.protocol': '=grpc'
+  'Dotel.exporter.otlp.endpoint': '=http://localhost:4317'
+  'Dotel.resource.attributes': "=service.name=pe-puppetdb,service.version=%{facts.pe_build},net.host.name=%{facts.networking.fqdn}"
+puppet_enterprise::profile::infra_assistant::java_args:
+  Xms: 512m
+  Xmx: 512m
+  'javaagent': ':/opt/puppetlabs/otel/opentelemetry-javaagent-all.jar'
+  'Dotel.metrics.exporter': '=none'
+  'Dotel.traces.exporter': '=otlp'
+  'Dotel.exporter.otlp.protocol': '=grpc'
+  'Dotel.exporter.otlp.endpoint': '=http://localhost:4317'
+  'Dotel.resource.attributes': "=service.name=pe-puppetdb,service.version=%{facts.pe_build},net.host.name=%{facts.networking.fqdn}"
