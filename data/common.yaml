@@ -212,6 +212,7 @@ cd4pe::root_config::ssl_authority_certificate: >
   Xms: 1024m
   Xmx: 1024m
   'javaagent': ':/opt/puppetlabs/otel/opentelemetry-javaagent-all.jar'
+  'Dotel.instrumentation.quartz.enabled': '=false'
   'Dotel.metrics.exporter': '=none'
   'Dotel.traces.exporter': '=otlp'
   'Dotel.exporter.otlp.protocol': '=grpc'
@@ -226,6 +227,7 @@ puppet_enterprise::profile::master::java_args:
   'Djruby.invokedynamic.yield': '=false'
   'Djruby.management.enabled': '=true'
   'javaagent': ':/opt/puppetlabs/otel/opentelemetry-javaagent-all.jar'
+  'Dotel.instrumentation.quartz.enabled': '=false'
   'Dotel.metrics.exporter': '=none'
   'Dotel.exporter.otlp.protocol': '=grpc'
   'Dotel.exporter.otlp.endpoint': '=http://localhost:4317'
@@ -234,6 +236,7 @@ puppet_enterprise::profile::orchestrator::java_args:
   Xms: 3201m
   Xmx: 3201m
   'javaagent': ':/opt/puppetlabs/otel/opentelemetry-javaagent-all.jar'
+  'Dotel.instrumentation.quartz.enabled': '=false'
   'Dotel.metrics.exporter': '=none'
   'Dotel.traces.exporter': '=otlp'
   'Dotel.exporter.otlp.protocol': '=grpc'
@@ -243,6 +246,7 @@ puppet_enterprise::profile::puppetdb::java_args:
   Xms: 4801m
   Xmx: 4801m
   'javaagent': ':/opt/puppetlabs/otel/opentelemetry-javaagent-all.jar'
+  'Dotel.instrumentation.quartz.enabled': '=false'
   'Dotel.metrics.exporter': '=none'
   'Dotel.traces.exporter': '=otlp'
   'Dotel.exporter.otlp.protocol': '=grpc'
@@ -252,6 +256,7 @@ puppet_enterprise::profile::infra_assistant::java_args:
   Xms: 512m
   Xmx: 512m
   'javaagent': ':/opt/puppetlabs/otel/opentelemetry-javaagent-all.jar'
+  'Dotel.instrumentation.quartz.enabled': '=false'
   'Dotel.metrics.exporter': '=none'
   'Dotel.traces.exporter': '=otlp'
   'Dotel.exporter.otlp.protocol': '=grpc'
