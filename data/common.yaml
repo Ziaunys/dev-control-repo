@@ -218,30 +218,20 @@ cd4pe::root_config::ssl_authority_certificate: >
   'Dotel.exporter.otlp.protocol': '=grpc'
   'Dotel.exporter.otlp.endpoint': '=http://localhost:4317'
   'Dotel.resource.attributes': "=service.name=pe-console-services,service.version=%{facts.pe_build},net.host.name=%{facts.networking.fqdn}"
-puppet_enterprise::profile::master::java_args:
-  Xms: 3072m
-  Xmx: 3072m
-  Xss: 4m
-  'XX:+HeapDumpOnOutOfMemoryError': ''
-  'XX:HeapDumpPath': '=/var/log/puppetlabs/puppetserver/puppetserver.hprof'
-  'Djruby.invokedynamic.yield': '=false'
-  'Djruby.management.enabled': '=true'
-  'javaagent': ':/opt/puppetlabs/otel/opentelemetry-javaagent-all.jar'
-  'Dotel.instrumentation.quartz.enabled': '=false'
-  'Dotel.metrics.exporter': '=none'
-  'Dotel.exporter.otlp.protocol': '=grpc'
-  'Dotel.exporter.otlp.endpoint': '=http://localhost:4317'
-  'Dotel.resource.attributes': "=service.name=pe-puppetserver,service.version=%{facts.pe_build},net.host.name=%{facts.networking.fqdn}"
-puppet_enterprise::profile::orchestrator::java_args:
-  Xms: 3201m
-  Xmx: 3201m
-  'javaagent': ':/opt/puppetlabs/otel/opentelemetry-javaagent-all.jar'
-  'Dotel.instrumentation.quartz.enabled': '=false'
-  'Dotel.metrics.exporter': '=none'
-  'Dotel.traces.exporter': '=otlp'
-  'Dotel.exporter.otlp.protocol': '=grpc'
-  'Dotel.exporter.otlp.endpoint': '=http://localhost:4317'
-  'Dotel.resource.attributes': "=service.name=pe-orchestration-services,service.version=%{facts.pe_build},net.host.name=%{facts.networking.fqdn}"
+# puppet_enterprise::profile::master::java_args:
+#   Xms: 3072m
+#   Xmx: 3072m
+#   Xss: 4m
+#   'XX:+HeapDumpOnOutOfMemoryError': ''
+#   'XX:HeapDumpPath': '=/var/log/puppetlabs/puppetserver/puppetserver.hprof'
+#   'Djruby.invokedynamic.yield': '=false'
+#   'Djruby.management.enabled': '=true'
+#   'javaagent': ':/opt/puppetlabs/otel/opentelemetry-javaagent-all.jar'
+#   'Dotel.instrumentation.quartz.enabled': '=false'
+#   'Dotel.metrics.exporter': '=none'
+#   'Dotel.exporter.otlp.protocol': '=grpc'
+#   'Dotel.exporter.otlp.endpoint': '=http://localhost:4317'
+#   'Dotel.resource.attributes': "=service.name=pe-puppetserver,service.version=%{facts.pe_build},net.host.name=%{facts.networking.fqdn}"
 puppet_enterprise::profile::puppetdb::java_args:
   Xms: 4801m
   Xmx: 4801m
