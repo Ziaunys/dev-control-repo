@@ -13,6 +13,13 @@ lookup_options:
   "^profile::platform::baseline::linux::users::.*password$":
     convert_to: 'Sensitive'
 
+catalog_policies:
+    no_exec:
+      description: "Exec resources are prohibited - TEST"
+      severity: error
+      rule:
+        type: deny
+        resource: exec
 ##
 # Hiera
 hiera::cmdpath:
